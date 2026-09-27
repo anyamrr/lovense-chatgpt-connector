@@ -15,6 +15,7 @@ const publicHostname = new URL(config.publicBaseUrl).hostname;
 const app = createMcpExpressApp({
   host: "0.0.0.0",
  allowedHosts: [...new Set([publicHostname, "healthcheck.railway.app", "localhost", "127.0.0.1", "[::1]"])],
+  });
 const store = new EncryptedStateStore(config.stateFile, config.stateEncryptionKey);
 const safety = new SafetyController(config.safety);
 const lovense = new LovenseClient({
